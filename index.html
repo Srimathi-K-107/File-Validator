@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f7ff">
+    <title>File Validation Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+
+        <header class="header">
+            <div class="logo">FV</div>
+            <span class="eyebrow">SMART FILE MANAGER</span>
+            <h1>File <span>Validation</span></h1>
+            <p>Upload, validate and preview your files with ease.</p>
+        </header>
+
+        <form id="form">
+
+            <div id="dragdropdiv">
+                <div class="upload-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.7" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 16V4m-5 5 5-5 5 5"/>
+                        <path d="M20 16.5v2A1.5 1.5 0 0 1 18.5 20h-13A1.5 1.5 0 0 1 4 18.5v-2"/>
+                    </svg>
+                </div>
+
+                <h2>Drag & Drop Files</h2>
+                <p class="upload-subtitle">or select files from your device</p>
+
+                <label for="file" class="choose-btn">Browse Files</label>
+                <input type="file" id="file" multiple accept="image/png,image/jpeg">
+
+                <div class="upload-info">
+                    <span>PNG / JPG / JPEG</span>
+                    <span>Max 2 MB per file</span>
+                </div>
+            </div>
+
+            <button id="validatebtn" type="submit">
+                Validate Files <span>→</span>
+            </button>
+
+            <div id="clear"></div>
+        </form>
+
+        <section class="res" id="stats" hidden aria-live="polite">
+            <div class="stat-card">
+                <div class="stat-icon purple">▤</div>
+                <div>
+                    <p>Total Files</p>
+                    <h3 id="totalcount">0</h3>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">✓</div>
+                <div>
+                    <p>Valid Files</p>
+                    <h3 id="validfilescount">0</h3>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon red">!</div>
+                <div>
+                    <p>Invalid Files</p>
+                    <h3 id="invalidfilescount">0</h3>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon blue">↗</div>
+                <div>
+                    <p>Total Size</p>
+                    <h3 id="totalsizecount">0 MB</h3>
+                </div>
+            </div>
+        </section>
+
+        <p id="txt" role="status" aria-live="polite"></p>
+
+        <section class="content-section" id="results-section" hidden>
+            <div class="section-heading">
+                <div>
+                    <h2>Validation Results</h2>
+                    <p>Check the format and size of your files.</p>
+                </div>
+            </div>
+            <div id="results"></div>
+        </section>
+
+        <section class="content-section" id="preview-section" hidden>
+            <div class="section-heading">
+                <div>
+                    <h2>File Preview</h2>
+                    <p>Preview and manage valid images.</p>
+                </div>
+            </div>
+            <div id="preview"></div>
+        </section>
+
+        <footer>
+            <span>FILE VALIDATION</span>
+            <span>HTML · CSS · JAVASCRIPT</span>
+        </footer>
+
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
